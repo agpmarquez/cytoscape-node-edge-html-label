@@ -14,6 +14,7 @@ interface CytoscapeNodeHtmlParams {
   edgehtmlTiltPoint1?: 'sourceNode' | 'targetNode' | number;
   edgehtmlTiltPoint2?: 'sourceNode' | 'targetNode' | number;
   edgehtmlLocation?: 'start' | 'end' | 'center';
+  disableLabelRotation?: boolean;
   tpl?: (d: any) => string;
 }
 
@@ -247,7 +248,7 @@ interface CytoscapeContainerParams {
         }
         const valRel = `translate(${this._align[2]}%,${this._align[3]}%) `;
         const valAbs = `translate(${x.toFixed(2)}px,${y.toFixed(2)}px) `;
-        const val = valRel + valAbs + `rotate(${angleDeg}deg)`;
+        const val = valRel + valAbs + (this._params.disableLabelRotation ? '' : `rotate(${angleDeg}deg)`);
         const stl = <any>this._node.style;
         stl.webkitTransform = val;
         stl.msTransform = val;
