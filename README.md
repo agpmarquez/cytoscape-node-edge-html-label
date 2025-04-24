@@ -67,6 +67,7 @@ cyInstance.nodeEdgeHtmlLabel([
         edgehtmlLocation: 'start', //location on edge to render html. Can be 'start','end','center'. 'center' will be default
         edgehtmlTiltPoint1: 'sourceNode', // first point to get angle of tilt for html.Can be 'sourceNode','targetNode', control point (i.e 0,1,2...)
         edgehtmlTiltPoint2: 'targetNode', // second point to get angle of tilt for html.Can be 'sourceNode','targetNode', control point (i.e 0,1,2...)
+        disableLabelRotation: false, // Optional: Set to true to prevent the edge label from rotating with the edge. Defaults to false (label rotates).
         tpl(data: any) {
           return '<div>this is div</div>';
           // your html template here
